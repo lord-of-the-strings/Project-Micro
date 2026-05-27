@@ -16,7 +16,6 @@ The repository is curated to include only custom configuration recipes and direc
 * `initramfs.cpio.gz` - The compressed custom userland archive.
 * `kernel.config` - The specific configuration recipe containing the build flags.
 * `rootfs/` - The base structural workspace directory layout.
-* `suckless_build/` - Custom utility modifications and source trees.
 
 ## Quick Start
 
