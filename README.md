@@ -23,3 +23,6 @@ Execute the automated launch harness to boot the environment directly inside you
 
 ```bash
 ./run.sh
+```
+## Note
+All userland binaries code except vi and dash were pulled from Suckless repos https://git.suckless.org/. They were not changed beyond binary stripping. Related information will be provided if needed and any help in further optimisation of the userland will be highly appreciated.
