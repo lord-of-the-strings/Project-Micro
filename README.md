@@ -1,20 +1,28 @@
-# ⚠️ Project Status: On Hiatus / Paused
+# Project Micro-OS
 
-**Notice:** Development on this distribution is paused for the foreseeable future. 
+A hyper-minimalist, custom-configured x86_64 Linux environment featuring an optimized **943 KB monolithic kernel** and an independent, isolated initramfs userland.
 
-### What this means:
-* **I am not stepping down:** I remain the primary maintainer of this repository. THIS PROJECT REMAINS PLANNED AND IS NOT BEING GHOSTED.
-* **No active updates:** I will not be pushing code, fixing bugs, or merging pull requests for a while.
-* **No support:** Issues regarding the current build will not be addressed right now.
+## Overview
+This project demonstrates extreme kernel stripping and custom userland construction. By removing legacy drivers, unused filesystems, and complex network subsystems, the kernel binary footprint has been optimized down to sub-megabyte execution space.
 
-### Why this is happening:
-Building a distro is incredibly time-consuming, and I currently need to step away to rest and focus on other priorities. Additionally, the project is in an **incomplete state**—the kernel currently panics on boot— I cannot advance it alone right now, I need time to relax and think.
+### Core Features
+* **Sub-Megabyte Footprint:** Monolithic kernel binary highly optimized to ~943 KB.
+* **Networkless Isolation:** Explicitly compiled with zero network device overhead (`-net none`) for a deterministic, attack-surface-reduced sandbox.
+* **Direct Serial Telemetry:** Standard video buffers are bypassed in favor of raw terminal injection via virtual serial pipelines.
 
-### For Contributors & Forkers:
-If you are interested in debugging the kernel panic or picking up development, please feel free to **fork the repository**. I will review major contributions or maintainership offers when I return. If you have something really important, you are welcome to contact me at <aaditysetu@gmail.com>. 
+## Project Structure
+The repository is curated to include only custom configuration recipes and direct output binaries, intentionally omitting heavy upstream source trees:
+* `vmlinuz-custom` - The compiled 943 KB optimized kernel target.
+* `initramfs.cpio.gz` - The compressed custom userland archive.
+* `kernel.config` - The specific configuration recipe containing the build flags.
+* `rootfs/` - The base structural workspace directory layout.
 
-Thank you for your understanding!
+## Quick Start
 
-*ENTERING AN INTERRUPTIBLE SLEEP STATE. KEEP THE SYSTEM RUNNING.*
+Execute the automated launch harness to boot the environment directly inside your active terminal pane:
 
-(Read ARCHIVE.md for my original README.)
+```bash
+./run.sh
+```
+## Note
+All userland binaries code except vi and dash were pulled from Suckless repos https://git.suckless.org/. They were not changed beyond binary stripping. Related information will be provided if needed and any help in further optimisation of the userland will be highly appreciated.
