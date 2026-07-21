@@ -7,3 +7,5 @@
 20/7/2026 16:57 BusyBox initialization process started  
 20/7/2026 16:58 Applied a Archlinux-specific (GCC 14+) fix to BusyBox check-lxdialog.sh  
 20/7/2026 17:11 BusyBox menuconfig done  
+21/7/2026 12:54 Created welcome message  
+21/7/2026 13:02 Finished init.d
