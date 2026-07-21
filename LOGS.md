@@ -10,4 +10,7 @@
 21/7/2026 12:54 Created welcome message  
 21/7/2026 13:02 Finished init.d
 21/7/2026 13:11 Finished syslinux.cfg
-21/7/2025 13:25 First test failed with generic boot error
+21/7/2026 13:25 First test failed with generic boot error  
+21/7/2026 13:44 Cause of kernel panic detected as typo in init.d/rc  
+21/7/2026 13:47 Second test failed; bzImage could not be found  
+21/7/2026 13:49 Kernel panic on third test; initramfs bit signature corrupted  
