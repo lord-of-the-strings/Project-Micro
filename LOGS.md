@@ -10,3 +10,4 @@
 21/7/2026 12:54 Created welcome message  
 21/7/2026 13:02 Finished init.d
 21/7/2026 13:11 Finished syslinux.cfg
+21/7/2025 13:25 First test failed with generic boot error
