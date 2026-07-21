@@ -9,3 +9,4 @@
 20/7/2026 17:11 BusyBox menuconfig done  
 21/7/2026 12:54 Created welcome message  
 21/7/2026 13:02 Finished init.d
+21/7/2026 13:11 Finished syslinux.cfg
