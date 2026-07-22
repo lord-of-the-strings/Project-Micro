@@ -1,13 +1,18 @@
 #!/bin/sh
-mount -t proc none /proc
-mount -t sysfs none /sys
+[ -d /proc/1 ] || mount -t proc none /proc
+[ -d /sys/kernel ] || mount -t sysfs none /sys
+mount -t devtmpfs none /dev 2>/dev/null
 mdev -s
-ln -s /proc/mounts /etc/mtab
 mkdir -p /mnt /home
-mount -t msdos -o rw /dev/fd0 /mnt
-mkdir -p /mnt/data
-mount --bind /mnt/data /home
+if mount -t msdos -o rw /dev/fd0 /mnt 2>/dev/null; then
+    echo "Floppy Disk Detected"
+    mkdir -p /mnt/data 2>/dev/null
+    mount --bind /mnt/data /home 2>/dev/null
+else
+    echo "Booting pure RAM system"
+    mount -t tmpfs none /home
+fi
 clear
-cat welcome
+[ -f /welcome ] && cat /welcome
 cd /home
-/bin/sh -l -m
+exit 0

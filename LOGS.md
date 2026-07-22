@@ -14,3 +14,4 @@
 21/7/2026 13:44 Cause of kernel panic detected as typo in init.d/rc  
 21/7/2026 13:47 Second test failed; bzImage could not be found  
 21/7/2026 13:49 Kernel panic on third test; initramfs bit signature corrupted  
+21/7/2026 14:00 Found had been using 64 bit ELF on 32 bit systems; fixed; test successful  
